@@ -6,7 +6,7 @@ public partial class Main : Node2D
 {
 	private GameState _gs;
 	private Label _wood;
-	private Button _bLumber, _bQuarry, _bFarm, _bMarket;
+	private Button _bLumber, _bQuarry, _bFarm, _bMarket; //кнопки покупки зданий
 	public override void _Ready()
 	{
 		_gs = GetNode<GameState>("/root/GameState");
@@ -16,17 +16,18 @@ public partial class Main : Node2D
 		_bFarm = GetNode<Button>("UI/Root/VBox/BuyFarm");
 		_bMarket = GetNode<Button>("UI/Root/VBox/BuyMarket");
 		GetNode<Button>("UI/Root/VBox/Click").Pressed += _gs.Click;
-
+		//подписываемся на кнопки покупки зданий
 		_bLumber.Pressed += () => _gs.Buy("lumber", 1);
 		_bQuarry.Pressed += () => _gs.Buy("quarry", 1);
 		_bFarm.Pressed += () => _gs.Buy("farm", 1);
 		_bMarket.Pressed += () => _gs.Buy("market", 1);
 		_gs.Changed += Refresh;
 		Refresh();
+		//подписываемся на сигнал Changed из GameState, чтобы обновлять UI
 	}
     public override void _ExitTree()
     {
-        if(_gs!=null) _gs.Changed -= Refresh;	
+        if(_gs!=null) _gs.Changed -= Refresh;	//отписываемся от сигнала Changed из GameState, чтобы не было утечки памяти
     }
 	private void Refresh()
 	{
@@ -35,6 +36,7 @@ public partial class Main : Node2D
 		UpdateButton(_bQuarry, "quarry", "Каменоломня");
 		UpdateButton(_bFarm, "farm", "Ферма");
 		UpdateButton(_bMarket, "market", "Рынок");
+		//подписываемся на сигнал Changed из GameState, чтобы обновлять UI
 	}
 	private void UpdateButton(Button b, string id, string title)
 	{
@@ -46,10 +48,10 @@ public partial class Main : Node2D
 		}
 		b.Text = text;
 		b.Disabled = !_gs.CanBuy(id, 1);
-	}
+	}//обновляем кнопку покупки здания
 	private static string F(double v)
 	{
 		return v.ToString("0.#");
-	}
+	}//форматируем число, чтобы не было много нулей после запятой	
 
 }
