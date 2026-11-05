@@ -35,6 +35,8 @@ public partial class GameState : Node
     public double IncomePerSec(string key)=>_sim.IncomePerSec(key);//читаем доход в секунду из симулятора экономики
     public Dictionary<string,double> CostFor(string id, int count)=>_sim.CostFor(id,count);//читаем цену за здание из симулятора экономики
     public bool CanBuy(string id, int count)=>_sim.CanAfford(_sim.CostFor(id, count));//можно ли купить здание из симулятора экономики
+    public IReadOnlyList<BuildingDef> GetDefs() => _sim.GetDefs();//возвращаем список определений зданий (чтобы не могли менять)
+    public BuildingDef GetDef(string id) => _sim.GetDef(id);//возвращаем определение здания по айди
     public void Click()//кликнули по экрану, передаём в симулятор экономики
     {
         _sim.Click();

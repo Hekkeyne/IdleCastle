@@ -8,4 +8,5 @@ public class BuildingDef
 	public double Growth;
 	public Dictionary<string, double> Income;
 	public int Plot;
+	public string Title;
 }

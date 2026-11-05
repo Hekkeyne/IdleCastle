@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://k8hm78cwaapd"]
+
+[ext_resource type="FontFile" uid="uid://duyao4qhtfnxh" path="res://assets/shaders/Rostov.ttf" id="1_0a85a"]
+[ext_resource type="Script" uid="uid://dsmmhc5vgbap2" path="res://scripts/Presentation/UpgradeRow.cs" id="1_hb3uc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxRowNormal"]
+content_margin_left = 18.0
+content_margin_top = 10.0
+content_margin_right = 18.0
+content_margin_bottom = 10.0
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+shadow_color = Color(0, 0, 0, 0.06)
+shadow_size = 4
+shadow_offset = Vector2(0, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxRowPressed"]
+content_margin_left = 18.0
+content_margin_top = 10.0
+content_margin_right = 18.0
+content_margin_bottom = 10.0
+bg_color = Color(0.839, 0.91, 0.984, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+shadow_color = Color(0, 0, 0, 0.06)
+shadow_size = 4
+shadow_offset = Vector2(0, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxRowHover"]
+content_margin_left = 18.0
+content_margin_top = 10.0
+content_margin_right = 18.0
+content_margin_bottom = 10.0
+bg_color = Color(0.97853833, 0.913617, 0.90285885, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+shadow_color = Color(0, 0, 0, 0.06)
+shadow_size = 4
+shadow_offset = Vector2(0, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxRowDisabled"]
+content_margin_left = 18.0
+content_margin_top = 10.0
+content_margin_right = 18.0
+content_margin_bottom = 10.0
+bg_color = Color(1, 1, 1, 0.5882353)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+shadow_color = Color(0, 0, 0, 0.06)
+shadow_size = 4
+shadow_offset = Vector2(0, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxRowFocus"]
+content_margin_left = 18.0
+content_margin_top = 10.0
+content_margin_right = 18.0
+content_margin_bottom = 10.0
+draw_center = false
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[node name="UpgradeRow" type="Button" unique_id=1970113806]
+custom_minimum_size = Vector2(0, 60)
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.1, 0.1, 0.1, 1)
+theme_override_colors/font_focus_color = Color(0.1, 0.1, 0.1, 1)
+theme_override_colors/font_pressed_color = Color(0.1, 0.1, 0.1, 1)
+theme_override_colors/font_hover_color = Color(0.1, 0.1, 0.1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.1, 0.1, 0.1, 1)
+theme_override_colors/font_disabled_color = Color(0.63, 0.65, 0.67, 1)
+theme_override_fonts/font = ExtResource("1_0a85a")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxRowNormal")
+theme_override_styles/pressed = SubResource("StyleBoxRowPressed")
+theme_override_styles/hover = SubResource("StyleBoxRowHover")
+theme_override_styles/disabled = SubResource("StyleBoxRowDisabled")
+theme_override_styles/focus = SubResource("StyleBoxRowFocus")
+text = "апро"
+alignment = 0
+script = ExtResource("1_hb3uc")

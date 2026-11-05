@@ -7,6 +7,7 @@ public class EconomySim
 	private readonly Dictionary<string, int> _levels = new();//уровни зданий (айди и сколько раз купили)
 	public double ClickPower {get; set;} = 1.0;
 	public string ClickResource {get; set;} = "wood";
+
 	public double GetResource(string key) => _wallet.TryGetValue(key, out var value) ? value : 0;
 	//почитали ресурс, если его нет в кошельке, то возвращаем 0
 	public int GetLevel(string key) => _levels.TryGetValue(key, out var value) ? value : 0;
@@ -24,6 +25,7 @@ public class EconomySim
 	{
 		return _defs.Find(d=>d.Id==id); //ищем по айди опрделенееи ыаа че я несу
 	}
+	public IReadOnlyList<BuildingDef> GetDefs() => _defs;//возвращаем список определений зданий (чтобы не могли менять)
 	public double IncomePerSec(string key)
 	{
 		double sum = 0;

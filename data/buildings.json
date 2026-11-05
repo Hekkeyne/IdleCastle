@@ -1,9 +1,9 @@
 {
   "version": 1,
   "buildings": [
-    { "id": "lumber", "nameKey": "b_lumber", "cost": { "wood": 15 }, "growth": 1.15, "income": { "wood": 0.5 }, "plot": 0 },
-    { "id": "quarry", "nameKey": "b_quarry", "cost": { "wood": 120 }, "growth": 1.15, "income": { "stone": 3 }, "plot": 1 },
-    { "id": "farm", "nameKey": "b_farm", "cost": { "wood": 900, "stone": 50 }, "growth": 1.15, "income": { "food": 15 }, "plot": 2 },
-    { "id": "market", "nameKey": "b_market", "cost": { "wood": 6000, "stone": 400, "food": 200 }, "growth": 1.15, "income": { "gold": 80 }, "plot": 3 }
+    { "id": "lumber", "title":"Лесопилка","nameKey": "b_lumber", "cost": { "wood": 15 }, "growth": 1.15, "income": { "wood": 1.5 }, "plot": 0 },
+    { "id": "quarry", "title":"Каменоломня","nameKey": "b_quarry", "cost": { "wood": 120 }, "growth": 1.15, "income": { "stone": 3 }, "plot": 1 },
+    { "id": "farm", "title":"Ферма","nameKey": "b_farm", "cost": { "wood": 900, "stone": 50 }, "growth": 1.15, "income": { "food": 15 }, "plot": 2 },
+    { "id": "market", "title":"Рынок","nameKey": "b_market", "cost": { "wood": 6000, "stone": 400, "food": 200 }, "growth": 1.15, "income": { "gold": 80 }, "plot": 3 }
   ]
 }
